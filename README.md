@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/microservices-demo/shipping.svg?branch=master)](https://travis-ci.org/microservices-demo/shipping) [![Coverage Status](https://coveralls.io/repos/github/microservices-demo/shipping/badge.svg?branch=master)](https://coveralls.io/github/microservices-demo/shipping?branch=master)
-# accounts
+# shipping
 A microservices-demo service that provides shipping capabilities.
 
 This build is built, tested and released by travis.
