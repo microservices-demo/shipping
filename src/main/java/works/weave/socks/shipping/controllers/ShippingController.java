@@ -1,9 +1,10 @@
-package works.weave.socks;
+package works.weave.socks.shipping.controllers;
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import works.weave.socks.shipping.entities.Shipment;
 
 @RestController
 public class ShippingController {

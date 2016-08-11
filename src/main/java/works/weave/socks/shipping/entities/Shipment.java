@@ -1,4 +1,4 @@
-package works.weave.socks;
+package works.weave.socks.shipping.entities;
 
 import java.util.UUID;
 
@@ -25,6 +25,22 @@ public class Shipment {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Shipment shipment = (Shipment) o;
+
+        return getId() != null ? getId().equals(shipment.getId()) : shipment.getId() == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        return getId() != null ? getId().hashCode() : 0;
     }
 
     public String getId() {
