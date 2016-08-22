@@ -38,6 +38,7 @@ addons:
 deploy:
   provider: script
   skip_cleanup: true
-  script: ssh -o StrictHostKeyChecking=no $BASTION_USER@$BASTION ./scripts/deploy.sh ${REPO} $COMMIT
+  # The deploy.sh file points to the deploy file on the bastion. Not one in the repo.
+  script: ssh -o StrictHostKeyChecking=no $BASTION_USER@$BASTION ./deploy.sh ${REPO} $COMMIT
   on:
     branch: master
