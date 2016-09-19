@@ -2,6 +2,9 @@
 
 set -ev
 
+export RELEASE_VERSION="0.0.2-SNAPSHOT"
+export BUILD_DATE=`date +%Y-%m-%dT%T%z`
+
 SCRIPT_DIR=$(dirname "$0")
 
 if [[ -z "$GROUP" ]] ; then
