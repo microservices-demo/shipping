@@ -13,13 +13,14 @@ import com.openpojo.validation.test.impl.SetterTester;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.Calendar;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
 
 public class UnitPojo {
     // Configured for expectation, so we know when a class gets added or removed.
-    private static final int EXPECTED_CLASS_COUNT = 1;
+    private static final int EXPECTED_CLASS_COUNT = 2;
 
     // The package to test
     private static final String POJO_PACKAGE = "works.weave.socks.shipping.entities";
@@ -72,6 +73,7 @@ public class UnitPojo {
     @Test
     public void testString() throws Exception {
         assertThat(new Shipment("id").toString(), is(notNullValue()));
+        assertThat(new HealthCheck("shipping", "OK", Calendar.getInstance().getTime()), is(notNullValue()));
 
     }
 }
