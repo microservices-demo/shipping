@@ -26,11 +26,11 @@ This build is built, tested and released by travis.
 
 # Check
 
-[http://localhost:8080/health](http://localhost:8080/health)
+`curl http://localhost:8080/health`
 
 # Use
 
-[http://localhost:8080](http://localhost:8080)
+`curl http://localhost:8080`
 
 # Push
 
