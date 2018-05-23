@@ -69,7 +69,6 @@ public class ShippingController {
                 }
             });
         } catch ( AmqpException e ) {
-            System.out.println("Unable to connect to RabbitMQ");
             rabbitmq.setStatus("err");
         }
 
