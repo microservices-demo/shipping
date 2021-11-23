@@ -16,9 +16,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     env:
-      GROUP: weaveworksdemos
+      GROUP: frgpow
       COMMIT: ${{ github.sha }}
-      REPO: shipping
+      REPO: sec-sox-shop-shipping
     steps:
       - uses: actions/checkout@v2
 
@@ -43,11 +43,12 @@ jobs:
       - name: Integration Tests
         run: mvn integration-test
 
-      # Upload coverage results to coveralls
-      - name: Submit Coveralls
-        env:
-          COVERALLS_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
-        run: mvn -DrepoToken=${COVERALLS_TOKEN} -DserviceJobId=${GITHUB_RUN_ID} -Dbranch=${GITHUB_REF} -DpullRequest=${GITHUB_HEAD_REF} -DserviceName=GITHUB verify jacoco:report coveralls:report
+      # Deactivated for now
+      # # Upload coverage results to coveralls
+      # - name: Submit Coveralls
+      #   env:
+      #     COVERALLS_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
+      #   run: mvn -DrepoToken=${COVERALLS_TOKEN} -DserviceJobId=${GITHUB_RUN_ID} -Dbranch=${GITHUB_REF} -DpullRequest=${GITHUB_HEAD_REF} -DserviceName=GITHUB verify jacoco:report coveralls:report
 
       # Push to dockerhub
       - name: Push to Docker Hub
@@ -60,4 +61,3 @@ jobs:
           path: target/
           repository: ${{ env.GROUP }}/${{ env.REPO }}
           tag_with_ref: true
-          tag_with_sha: true
